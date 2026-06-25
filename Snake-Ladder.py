@@ -8,7 +8,6 @@ snakes = {
     25: 2,
     95: 72
 }
-
 ladders = {
     6: 25,
     11: 40,
@@ -16,11 +15,8 @@ ladders = {
     46: 90,
     17: 69
 }
-
-
 def roll_dice():
     return random.randint(1, 6)
-
 
 def move_player(position, dice):
     position += dice
@@ -37,30 +33,22 @@ def move_player(position, dice):
         position = ladders[position]
 
     return position
-
-
 player1 = 0
 player2 = 0
-
 print(" Welcome to Snake and Ladder ")
-
 while True:
     input("\nPlayer 1 - Press Enter to roll dice...")
     dice = roll_dice()
     print(f"Player 1 rolled: {dice}")
-
     player1 = move_player(player1, dice)
     print(f"Player 1 Position: {player1}")
-
     if player1 == 100:
         print("\n🏆 Player 1 Wins!")
         print("CONGRATULATIONS")
         break
-
     input("\nPlayer 2 - Press Enter to roll dice...")
     dice = roll_dice()
     print(f"Player 2 rolled: {dice}")
-
     player2 = move_player(player2, dice)
     print(f"Player 2 Position: {player2}")
 
